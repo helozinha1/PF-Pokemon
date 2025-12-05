@@ -1,14 +1,3 @@
- document.querySelectorAll('.card-container').forEach(cardContainer => {
-            
-            cardContainer.addEventListener('mouseover', () => {
-                cardContainer.querySelector('.card').style.transform = 'rotateY(180deg)';
-            });
-            cardContainer.addEventListener('mouseleave', () => {
-                cardContainer.querySelector('.card').style.transform = 'rotateY(0deg)';
-            });
-        });
-
-
 async function fetchPokemonData(pokemonName) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
@@ -29,14 +18,17 @@ async function displayPokemon(pokemonName, containerSelector) {
         const container = document.querySelector(containerSelector);
         const cardContainer = document.createElement('div');
         cardContainer.classList.add('card-container');
-        cardContainer.setAttribute('data-info', `Tipo: ${data.types.map(t => t.type.name).join(', ')} | Habilidade: ${data.abilities.map(a => a.ability.name).join(', ')} | ID: #${data.id.toString().padStart(3, '0')}`);
+        
+        const pokemonNameCapitalized = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+        
         cardContainer.innerHTML = `
             <div class="card">
                 <div class="card-face card-front">
-                    <img src="${data.sprites.front_default}" alt="${data.name}">
+                    <img src="${data.sprites.other['official-artwork'].front_default}" alt="${data.name}">
+                    <div class="pokemon-name">${pokemonNameCapitalized}</div>
                 </div>
                 <div class="card-face card-back">
-                    <h3>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h3>
+                    <h3>${pokemonNameCapitalized}</h3>
                     <div class="card-back-info">
                         <div class="info-row">
                             <div class="info-label">
@@ -46,7 +38,7 @@ async function displayPokemon(pokemonName, containerSelector) {
                         </div>
                         <div class="info-row">
                             <div class="info-label">
-                                <span class="info-icon">⚡</span> Habilidade:
+                                <span class="info-icon">🌟</span> Habilidade: 
                             </div>
                             <div class="info-value">${data.abilities.map(a => a.ability.name).join(', ')}</div>
                         </div>
@@ -57,7 +49,7 @@ async function displayPokemon(pokemonName, containerSelector) {
                             <div class="info-value">#${data.id.toString().padStart(3, '0')}</div>
                         </div>
                         <div class="stat-bar">
-                            <div class="stat-name">💪 HP</div>
+                            <div class="stat-name">❤️ HP</div>
                             <div class="bar-container">
                                 <div class="bar-fill" style="width: ${(data.stats[0].base_stat / 255) * 100}%"></div>
                             </div>
@@ -81,14 +73,8 @@ async function displayPokemon(pokemonName, containerSelector) {
         container.appendChild(cardContainer);
     }
 }
-const pokemonList = ['Charmander', 'Arcanine', 'Flareon','Ponyta','Torkoal','Litleo', 'Darumaka','Lampent','Chimchar','Fennekin','Blacephalon','Fletchling'];
+
+const pokemonList = ['charmander', 'arcanine', 'flareon','ponyta','torkoal','litleo', 'darumaka','lampent','chimchar','fennekin','blacephalon','fletchling'];
 pokemonList.forEach(pokemon => {
     displayPokemon(pokemon, '.fogo');
 });
-
-
-
-
-
-
-
