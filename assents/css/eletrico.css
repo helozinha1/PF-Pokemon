@@ -10,12 +10,12 @@ body {
 }
 
 header {
-    background-color: #ff6600; 
+    background-color: #FFD54A;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 header ul {
     list-style-type: none;
@@ -23,22 +23,22 @@ header ul {
 header li {
     display: inline-block;
     margin: 0 8px;
-    background-color: #ffaa00; 
+    background-color: #FFD54A;
     padding: 10px 20px;
     border-radius: 20px;
-    border: solid 2px #cc3300; 
+    border: solid 2px #E6A800;
     transition: all 0.3s ease;
 }
 
 header li:hover {
-    background-color: #cc3300; 
-    border: solid 2px #ffaa00; 
+    background-color: #E6A800;
+    border: solid 2px #FFD54A;
     cursor: pointer;
 }
 
 header a {
     text-decoration: none;
-    color: #331a00; 
+    color: #5c3e00;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -88,34 +88,34 @@ header img {
     align-items: center;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 213, 74, 0.25);
     backface-visibility: hidden;
     box-sizing: border-box;
 }
 
 .card-front {
-    background-color: #ffe8cc;
-    color: #663300;
-    border: 3px solid #ff4500;
+    background-color: #fff7d6;
+    color: #5c3e00;
+    border: 3px solid #e0bf03;
     justify-content: space-evenly;
 }
 
 .card-front img {
     width: 200px;
     height: auto;
-    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.2));
 }
 
 .pokemon-name {
     font-size: 1.4em;
     font-weight: 800;
-    color: #663300;
-    text-shadow: 1px 1px 0 #fff0cc; 
+    color: #5c3e00;
+    text-shadow: 1px 1px 0 #fff;
     text-transform: capitalize;
 }
 
 .card-back {
-    background: linear-gradient(135deg, #1d1a19 0%, #1a0000 100%);
+     background: linear-gradient(135deg, #383838 0%, #222222 100%);
     color: white;
     transform: rotateY(180deg);
     text-align: center;
@@ -128,9 +128,9 @@ header img {
     font-size: 1.6em;
     text-transform: capitalize;
     letter-spacing: 1px;
-    border-bottom: 3px dashed #ff6600;
+    border-bottom: 3px dashed #FFD54A;
     padding-bottom: 8px;
-    color: #fff7e6; 
+    color: #fff7d6;
     margin-bottom: 15px;
 }
 
@@ -145,7 +145,7 @@ header img {
     display: flex;
     align-items: center;
     padding: 8px 0 ;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .info-label {
@@ -153,7 +153,7 @@ header img {
     align-items: center;
     gap: 8px;
     font-weight: 700;
-    color: #ff9900; 
+    color: #f5bc00;
 }
 
 .info-icon {
@@ -161,7 +161,7 @@ header img {
 }
 
 .info-value {
-    color: #fff0cc;
+    color: #f0f0f0;
     font-weight: 500;
     text-transform: capitalize;
     margin-left: 10px;
@@ -179,7 +179,7 @@ header img {
 .stat-name {
     font-size: 0.9em;
     font-weight: 700;
-    color: #ffb733; 
+    color: #ffc400;
     min-width: 60px;
     text-align: left;
 }
@@ -194,7 +194,7 @@ header img {
 
 .bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #ff6600, #ffaa00); 
+    background: linear-gradient(90deg, #fad044, #fae7bb);
     border-radius: 4px;
 }
 
@@ -206,13 +206,13 @@ header img {
     display: none;
     width: 40px;
     height: 40px;
-    background-color: #ffaa00;
+    background-color: #E6A800;
     border-radius: 50%;
     cursor: pointer;
     position: relative;
     align-items: center;
     justify-content: center;
-    border: 2px solid #cc3300;
+    border: 2px solid #5c3e00;
     z-index: 100;
 }
 
@@ -221,7 +221,7 @@ header img {
     display: block;
     width: 60%;
     height: 3px;
-    background-color: #cc3300;
+    background-color: #5c3e00;
     border-radius: 2px;
     position: absolute;
     transition: all 0.3s ease-in-out;
@@ -265,12 +265,12 @@ header img {
         order: 3; 
         max-height: 0;
         overflow: hidden;
-        background-color: #ff6600;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #FFD54A;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: max-height 0.4s ease-in-out;
     }
 
-    
+   
     .nav-open header nav {
         max-height: 400px; 
 

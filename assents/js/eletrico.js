@@ -38,7 +38,7 @@ async function displayPokemon(pokemonName, containerSelector) {
                         </div>
                         <div class="info-row">
                             <div class="info-label">
-                                <span class="info-icon">🌟</span> Habilidade: 
+                                <span class="info-icon">🌟</span> Habilidade:
                             </div>
                             <div class="info-value">${data.abilities.map(a => a.ability.name).join(', ')}</div>
                         </div>
@@ -74,9 +74,9 @@ async function displayPokemon(pokemonName, containerSelector) {
     }
 }
 
-const pokemonList = ['charmander', 'arcanine', 'flareon','ponyta','torkoal','litleo', 'darumaka','lampent','chimchar','fennekin','blacephalon','fletchling'];
+const pokemonList = ['Jolteon', 'Shinx', 'Flaaffy', 'Voltorb', 'Pikachu', 'Zapdos', 'Zebstrika', 'Zekrom', 'Plusle','Emolga', 'Geodude-Alola', 'Pachirisu'];
 pokemonList.forEach(pokemon => {
-    displayPokemon(pokemon, '.fogo');
+    displayPokemon(pokemon, '.eletrico');
 });
 
 document.getElementById('menu-toggle').onclick = function() {
