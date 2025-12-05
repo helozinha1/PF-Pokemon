@@ -1,42 +1,36 @@
+let list = document.querySelectorAll('.item')
+let next = document.getElementById('next')
+let prev = document.getElementById('prev')
+let body = document.querySelector('body')
 
+let count = list.length
+let active = 0
 
-    const noticias = [
-    {
-        id: 1,
-        titulo: "teste1",
-        descricao: "Teste de noticia.",
-       imagem: "https://img.odcdn.com.br/wp-content/uploads/2025/11/Pokmons-inteis-via-The-Pokmon-Company-reproduo-Olhar-Digital-1920x1080.jpg"
-    },
-    {
-        id: 2,
-        titulo: "teste2",
-        descricao: "Teste de noticia.",
-       imagem: "https://via.placeholder.com/300x200?text=Pokemon+Gen"
-    },
-    {
-        id: 3,
-        titulo: "teste3",
-        descricao: "Teste de noticia.",
-       imagem: "https://via.placeholder.com/300x200"
-    }
-   
-];
-
-function exibirNoticias() {
-    const container = document.getElementById('noticias-container');
-   
-    noticias.forEach(noticia => {
-        const noticiaHTML = `
-            <div class="noticia-card">
-                <img src="${noticia.imagem}" alt="${noticia.titulo}">
-                <div class="noticia-content">
-                    <h3>${noticia.titulo}</h3>
-                    <p>${noticia.descricao}</p>                    
-                </div>
-            </div>
-        `;
-        container.innerHTML += noticiaHTML;
+function reloadSlider() {
+    list.forEach(item => {
+        item.classList.remove('active');
     });
+
+    list[active].classList.add('active');
+
+    let activeItem = list[active];
+    
+    let primaryColor = activeItem.style.getPropertyValue('--primary-color-item');
+    let secondaryColor = activeItem.style.getPropertyValue('--secondary-color-item');
+
+    body.style.setProperty('--primary-color', primaryColor);
+    body.style.setProperty('--secondary-color', secondaryColor);
 }
 
-document.addEventListener('DOMContentLoaded', exibirNoticias);
+
+next.onclick = () => {
+    active = active >= count - 1 ? 0 : active + 1
+    reloadSlider()
+} 
+
+prev.onclick = () => {
+    active = active <= 0 ? count - 1 : active - 1
+    reloadSlider()
+}
+
+reloadSlider()
