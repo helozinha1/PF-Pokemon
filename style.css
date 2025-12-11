@@ -242,8 +242,9 @@ footer {
     }
 
     .description__title {
-        font-size: 8vw;
-        margin-top: -25px;
+        font-size: 40px;
+        margin-top: 80px;
+        text-align: center;
     }
 
     .description__text {
@@ -253,11 +254,13 @@ footer {
     .action {
         font-size: 8vw;
         height: 70px;
+        text-align: center;
+        margin-top: 300px;
     }
 
     .pokemon-image {
-        width: 80vw;
-        margin-top: -50px
+        width: 250px;
+        margin-top: -50px;
     }
 
     .arrow button {
